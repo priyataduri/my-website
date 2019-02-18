@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+  scroll-behavior: smooth;
+  background:darkgrey;
+}
+
+#gabby-icon{
+  position:absolute;
+  width:50px;
+  height:50px;
+  background:radial-gradient(#109be9,#155dca);
+  bottom:0;
+  right:0;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:30px;
+  text-decoration:none;
+  margin:5px;
+  font-family:cursive;
+  box-shadow:2px 2px 2px grey;
+}
+
+#gabby-icon:hover{
+  background:#0c83bb;
+  transition:background 1s;
+
+}
+
+section{
+  background:lightgrey;
+  /*height: calc(100% - 50px);*/
+  height:100%;
+  top:0px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+
+}
+
+h1{
+  font-size:50px;
+  font-family: arial;
+  text-align:center;
+  font-family: 'Permanent Marker', cursive;
+  color:white;
+}
+
+#home{
+  background:black;
+}
+
+#home h1{
+  font-size:70px;
+  margin:0;
+  color:white;
+}
+
+
+#home p{
+  font-size:20px;
+  font-style:italic;
+  font-family:sans-serif;
+  color:#59f879;
+}
+
+#aboutme{
+  background:linear-gradient(black,darkgrey);
+}
+
+#aboutme p{
+  width:80%;
+  line-height:1em;
+}
+
+/*Nav bar*/
+nav{
+  width:100%;
+  background:#59f879;
+  position:fixed;
+  top:0;
+  height:50px;
+  display:flex;
+  justify-content:flex-end;
+  z-index:1;
+}
+
+label{
+  display:none;
+}
+
+
+nav li{
+  display:inline;
+  position:relative;
+  padding:1em 0em;
+
+}
+
+#nav-button{
+  display:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:black;
+  font-family:arial;
+  padding:0px 10px;
+}
+
+nav a:hover{
+  color:white;
+  transition:color 0.2s;
+  position:relative;
+}
+
+nav a:hover:before{
+  content:'';
+  position:absolute;
+  border-right:15px solid transparent;
+  border-left:15px solid transparent;
+  border-top:15px solid black;
+  width:40px;
+  top:-18px;
+
+}
+
+#portfolio{
+  background:white;
+  height:auto;
+}
+
+#portfolio h1{
+  color:black;
+}
+
+#portfolio img{
+  height:200px;
+  width:300px;
+  object-fit: none;
+  object-position: 50% 50%;
+}
+
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  padding:50px 0px;
+
+}
+
+.gallery img{
+  cursor:pointer;
+  margin:10px 0px;
+}
+
+#gallery-zoom{
+  position:fixed;
+  background:rgba(0,0,0,0.5);
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  display:none;
+  align-items:center;
+}
+
+#img-zoom{
+  display:block;
+  width:80%;
+  margin:auto;
+  position: relative;
+  transition: left 2s;
+}
+
+#right-arrow{
+  background:black;
+  width:50px;
+  height:50px;
+  cursor:pointer;
+}
+
+#left-arrow{
+  background:black;
+  width:50px;
+  height:50px;
+  cursor:pointer;
+}
+
+#close{
+  position:absolute;
+  left:0;
+  top:50px;
+  background:black;
+  width:20px;
+  color:white;
+  text-align:center;
+  z-index:1000;
+  cursor:pointer;
+}
+
+#contact{
+  background:black;;
+}
+
+#contact form{
+  
+}
+
+#contact input{
+  width:100%;
+  border-radius:5px;
+  padding:10px;
+  margin:10px auto;
+}
+
+/*Nav bar*/
+
+@media only screen 
+  and (max-width: 736px) 
+  and (orientation: portrait) {
+    
+    /*Nav bar*/
+    
+    nav{
+      align-items:center;
+    }
+    
+    nav ul{
+      position:absolute;
+      top:34px;
+      width:100%;
+      background:darkgrey;
+      height:0;
+      overflow:hidden;
+      transition:height 1s;
+    }
+    
+    nav li{
+      display:block;
+      width:100%;
+      padding:5px;   
+    }
+    
+    label{
+      display:block;
+      padding:0px 10px;
+      font-size:30px;
+      cursor:pointer;
+    }
+    
+    label:hover{
+      color:white;
+    }
+    
+    nav a{
+      width:100%;
+      display:block;
+    }
+    
+    #nav-button:checked ~ ul{
+        height:140px;
+        transition: height 1s;
+    }
+    
+    nav li:hover{
+      background:lightgrey;
+    }
+    
+    /*nav bar*/
+}
